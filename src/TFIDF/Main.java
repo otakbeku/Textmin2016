@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tokenisasi;
+package TFIDF;
 
+import tokenisasi.*;
 import java.util.StringTokenizer;
 
 /**
