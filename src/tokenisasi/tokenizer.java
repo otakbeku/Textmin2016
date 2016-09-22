@@ -5,82 +5,77 @@ import java.util.StringTokenizer;
 
 public class tokenizer {
 
+    /**
+     * CharSequence is an interface String class implement CharSequence
+     */
+    String delimiter = "[ .,?!0123456789\\+\\-*\\^\\@#$%]+";
+    CharSequence delimit = "[.,?!0123456789\\+\\-*\\^\\@#$%]+";
     String kalimat;
     String[] hasilToken = new String[100];
 
+    /**
+     * Constructor dengan parameter String untuk langsung mengisi nilai pada
+     * variabel kalimat.
+     *
+     * @param kalimat String; nilai yang digunakan untuk ditokenisasi
+     */
     public tokenizer(String kalimat) {
         this.kalimat = kalimat;
     }
 
+    /**
+     * Constructor kosong
+     */
     public tokenizer() {
 
     }
 
+    /**
+     * Method untuk mengset nilai kalimat
+     *
+     * @param kalimat String; nilai yang digunakan untuk ditokenisasi
+     */
     public void setKalimat(String kalimat) {
         this.kalimat = kalimat;
     }
 
+    /**
+     * Method untuk mendapatkan token dari variabale String kalimat.
+     */
     private void getToken() {
-        StringTokenizer st = new StringTokenizer(kalimat);
-        int i = 0;
-        while (st.hasMoreTokens()) {
-            hasilToken[i++] = st.nextToken();
+        hasilToken = kalimat.split(delimiter);
+    }
+
+    /**
+     * Method untuk mencetak token yang telah didapat dari method getToken
+     */
+    void cetakToken() {
+        getToken();
+        for (int i = 0; i < hasilToken.length; i++) {
+            if (hasilToken[i] != null) {
+                System.out.println(hasilToken[i]);
+            }
         }
 
     }
 
+    /**
+     * Method untuk mendapatkan token dengan menggunakan StringTokenizer
+     */
     private void getToken2() {
         StringTokenizer st = new StringTokenizer(kalimat);
         int i = 0;
-
+        String[] simpan = new String[1];
         while (st.hasMoreTokens()) {
-            hasilToken[i] = st.nextToken();
-            if (hasilToken[i].contains(".") == true) {
+            hasilToken[i++] = st.nextToken();
 
-            }
-            i++;
         }
-
     }
 
-    /** 
-     * Method untuk memisahkan karakter atau tanda baca dengan alphabet
-     * @param kata 
+    /**
+     * Method untuk mencetak token yang didapat dari getToken2
      */
-    private void splitter(String kata) {
-        String[] simpan = new String[2];
-        if (kata.contains(".")) {
-            
-        }
-        if (kata.contains("?")) {
-            
-        }
-        if (kata.contains(".")) {
-            
-        }
-        if (kata.contains(".")) {
-            
-        }
-        if (kata.contains(".")) {
-            
-        }
-        if (kata.contains(".")) {
-            
-        }
-        if (kata.contains(".")) {
-            
-        }
-        if (kata.contains(".")) {
-            
-        }
-        if (kata.contains(".")) {
-            
-        }
-        
-        simpan = kata.split("\\.");
-    }
-
-    void cetakToken() {
+    void cetakToken2() {
         getToken();
         for (int i = 0; i < kalimat.length(); i++) {
             if (hasilToken[i] != null) {
@@ -88,14 +83,4 @@ public class tokenizer {
             }
         }
     }
-
-    void cetakToken2() {
-        getToken2();
-        for (int i = 0; i < kalimat.length(); i++) {
-            if (hasilToken[i] != null) {
-                System.out.println(hasilToken[i]);
-            }
-        }
-    }
-
 }

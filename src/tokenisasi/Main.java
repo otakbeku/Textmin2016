@@ -18,7 +18,6 @@ public class Main {
         tokenizer ubah = new tokenizer();
         ubah.setKalimat(kalimat);
         ubah.cetakToken();
-        ubah.cetakToken2();
 
     }
 }
