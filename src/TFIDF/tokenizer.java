@@ -12,7 +12,7 @@ public class tokenizer {
     String delimiter = "[ .,?!0123456789\\+\\-*\\^\\@#$%]+";
     CharSequence delimit = "[.,?!0123456789\\+\\-*\\^\\@#$%]+";
     String kalimat;
-    String[] hasilToken = new String[100];
+    String[] hasilToken = new String[100];//Asumsi 1 paragraf ada 100 kata
 
     /**
      * Constructor dengan parameter String untuk langsung mengisi nilai pada
