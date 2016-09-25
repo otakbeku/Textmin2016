@@ -76,11 +76,30 @@ public class tokenizer {
      * Method untuk mencetak token yang didapat dari getToken2
      */
     void cetakToken2() {
-        getToken();
+        getToken2();
         for (int i = 0; i < kalimat.length(); i++) {
             if (hasilToken[i] != null) {
                 System.out.println(hasilToken[i]);
             }
         }
+    }
+
+    private int countWords() {
+        int count = 0;
+        boolean CekKata = false;
+        int panjangKalimat = this.delimiter.length() - 1;
+
+        for (int i = 0; i < this.delimiter.length(); i++) {
+            if (Character.isLetter(this.delimiter.charAt(i)) && i != panjangKalimat) {
+                CekKata = true;
+            } else if (!Character.isLetter(this.delimiter.charAt(i)) && CekKata) {
+                count++;
+                CekKata = false;
+            } else if (Character.isLetter(this.delimiter.charAt(i)) && i == panjangKalimat) {
+                count++;
+            }
+
+        }
+        return count;
     }
 }

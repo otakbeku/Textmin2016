@@ -15,10 +15,10 @@ import java.util.StringTokenizer;
 public class Main {
 
     public static void main(String[] args) {
-        String kalimat = "coba tokenisasi!! teks ini. test!234 6877678hhh ++kaka ll-^ @#$nanana %$$batman";
+        String kalimat = "coba tokenisasi!! teks ini. test!234 gjyhkj6877678hhh ++kaka ll-^ @#$nanana %$$batman";
         tokenizer ubah = new tokenizer();
         ubah.setKalimat(kalimat);
-        ubah.cetakToken();
+        ubah.cetakToken2();
 
     }
 }
