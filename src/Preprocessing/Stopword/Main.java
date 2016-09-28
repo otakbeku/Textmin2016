@@ -4,7 +4,7 @@
  * Menerima saran. Feel free to forking and make your own.
  * site: otakbeku.github.io/Textmin2016/
  */
-package Stopword;
+package Preprocessing.Stopword;
 
 import java.util.ArrayList;
 
@@ -45,7 +45,7 @@ public class Main {
         System.out.println("");
         System.out.println("tes baru");
         
-        stopword st = new stopword("Pembeli bisa memesan makanan dan langsung ambil sesuai order makanan dan jam ambilnya.");
+        Stopword st = new Stopword("Pembeli bisa memesan makanan dan langsung ambil sesuai order makanan dan jam ambilnya.");
 //        st.removeStopwords();
         String hasil = st.getRemovedStopword();
         System.out.println("hasil: "+hasil);

@@ -4,7 +4,7 @@
  * Menerima saran. Feel free to forking and make your own.
  * site: otakbeku.github.io/Textmin2016/
  */
-package IndonesianStemming;
+package Preprocessing.IndonesianStemming;
 
 import org.apache.lucene.analysis.id.IndonesianStemmer;
 

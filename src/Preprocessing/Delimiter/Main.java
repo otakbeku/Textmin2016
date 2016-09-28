@@ -4,21 +4,16 @@
  * Menerima saran. Feel free to forking and make your own.
  * site: otakbeku.github.io/Textmin2016/
  */
-package tokenisasi;
-
-import java.util.StringTokenizer;
+package Preprocessing.Delimiter;
 
 /**
  *
  * @author Kotak Hitam
  */
 public class Main {
-
     public static void main(String[] args) {
-        String kalimat = "coba tokenisasi!! teks ini. test!234 6877678hhh ++kaka ll-^ @#$nanana %$$batman";
-        tokenizer ubah = new tokenizer();
-        ubah.setKalimat(kalimat);
-        ubah.cetakToken();
-
+        delimiter dee = new delimiter("345AFid546 fgh@#$gh 4567ghj#$%^ ");
+        System.out.println("text: "+dee.GetDelimiteredText());
     }
+    
 }
