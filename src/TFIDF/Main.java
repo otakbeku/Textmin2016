@@ -7,10 +7,10 @@
 package TFIDF;
 
 import BacaFile.BacaFile;
-import Preprocessing.Delimiter.Delimiter;
-import Preprocessing.IndonesianStemming.Stemming;
-import Preprocessing.Stopword.Stopword;
-import Preprocessing.tokenisasi.Tokenisasi;
+import TFIDF.Preprocessing.Delimiter.Delimiter;
+import TFIDF.Preprocessing.IndonesianStemming.Stemming;
+import TFIDF.Preprocessing.Stopword.Stopword;
+import TFIDF.Preprocessing.tokenisasi.Tokenisasi;
 import java.io.File;
 
 import org.apache.lucene.analysis.Tokenizer;

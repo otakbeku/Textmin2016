@@ -4,7 +4,7 @@
  * Menerima saran. Feel free to forking and make your own.
  * site: otakbeku.github.io/Textmin2016/
  */
-package Preprocessing.Delimiter;
+package TFIDF.Preprocessing.Delimiter;
 
 import java.util.Scanner;
 

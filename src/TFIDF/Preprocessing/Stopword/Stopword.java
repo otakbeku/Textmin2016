@@ -4,7 +4,7 @@
  * Menerima saran. Feel free to forking and make your own.
  * site: otakbeku.github.io/Textmin2016/
  */
-package Preprocessing.Stopword;
+package TFIDF.Preprocessing.Stopword;
 
 import BacaFile.BacaFile;
 import java.io.File;
@@ -16,8 +16,8 @@ public class Stopword {
     String docFixed = "";
     static ArrayList<String> wordList = new ArrayList<String>();
     static String[] stopwords = null;
-
-    File stopwordtext = new File("C:\\Users\\Kotak Hitam\\Documents\\KULIAH\\TEXTMIN\\stopword-1.txt");
+    //Pathnya bisa diganti nanti
+    File stopwordtext = new File("C:\\Users\\Kotak Hitam\\Documents\\NetBeansProjects\\Textmin2016\\src\\Preprocessing\\stopword-1.txt");
     BacaFile bf = new BacaFile(stopwordtext);
 
     public Stopword() {

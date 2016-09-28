@@ -4,7 +4,7 @@
  * Menerima saran. Feel free to forking and make your own.
  * site: otakbeku.github.io/Textmin2016/
  */
-package Preprocessing.tokenisasi;
+package TFIDF.Preprocessing.tokenisasi;
 
 import java.util.StringTokenizer;
 

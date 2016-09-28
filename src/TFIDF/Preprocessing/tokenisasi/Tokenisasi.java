@@ -4,10 +4,10 @@
  * Menerima saran. Feel free to forking and make your own.
  * site: otakbeku.github.io/Textmin2016/
  */
-package Preprocessing.tokenisasi;
+package TFIDF.Preprocessing.tokenisasi;
 
-import Preprocessing.Delimiter.Delimiter;
-import tokenisasi.*;
+import TFIDF.Preprocessing.Delimiter.Delimiter;
+//import tokenisasi.*;
 import java.lang.Object;
 import java.util.StringTokenizer;
 
