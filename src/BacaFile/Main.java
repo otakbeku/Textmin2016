@@ -24,7 +24,7 @@ public class Main {
         String nis = "fgh dtfyguhiuj rdfghj rdfghj rdftgyh jtfyguh jiktfygh ujtf yghuj fghj fgh"
                 + "tfytgyhujkl;tygyhjkl"
                 + "fgjhkl";
-        bacafile test = new bacafile();
+        BacaFile test = new BacaFile();
         
         test.buatFileInOut();
 //        System.out.println("test: " + test.getTulis().toString());

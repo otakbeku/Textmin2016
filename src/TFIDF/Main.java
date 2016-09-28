@@ -6,7 +6,14 @@
  */
 package TFIDF;
 
-import java.util.StringTokenizer;
+import BacaFile.BacaFile;
+import Preprocessing.Delimiter.Delimiter;
+import Preprocessing.IndonesianStemming.Stemming;
+import Preprocessing.Stopword.Stopword;
+import Preprocessing.tokenisasi.Tokenisasi;
+import java.io.File;
+
+import org.apache.lucene.analysis.Tokenizer;
 
 /**
  *
@@ -15,8 +22,43 @@ import java.util.StringTokenizer;
 public class Main {
 
     public static void main(String[] args) {
-        
-        
+        //preprocessing
 
+        //Inisilisasi dan deklarasi variabel
+        File file = new File("doc1.txt");
+        BacaFile bf = new BacaFile();
+        Delimiter dlmr = new Delimiter();
+        Stopword Stw = new Stopword();
+        Tokenisasi Tkns = new Tokenisasi();
+        Stemming Stm = new Stemming();
+        String dokumen = null;
+        String[] hasilToken = null;
+        String hasilAkhir = "";
+
+        //proses
+        //delimiter
+        dokumen = bf.getText(file);
+//        System.out.println("Dokumen: " + dokumen);
+        dlmr.setScan(dokumen);
+        dokumen = dlmr.GetDelimiteredText();
+//        System.out.println("Dokumen delimiter: " + dokumen);
+        //Stopword
+        Stw.setDoc(dokumen);
+        dokumen = Stw.getRemovedStopword();
+//        System.out.println("Dokumen Stopword: " + dokumen);
+
+        //tokenisasi - ditaruh ditahap ini karena hasilnya bisa sesuai kebutuhan.
+        Tkns.setKalimat(dokumen);
+        hasilToken = Tkns.getTokenNonDelimetered();
+//        System.out.println("Dokumen Tokenisasi: " + dokumen);
+
+        //Stemmming
+        for (int i = 0; i < hasilToken.length; i++) {
+//            System.out.println("hasil token: " + hasilToken[i]);
+            Stm.setKata(hasilToken[i]);
+            hasilAkhir += Stm.getNonDuplicateText();
+        }
+
+        System.out.println("Hasil Akhir: " + hasilAkhir);
     }
 }

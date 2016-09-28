@@ -6,26 +6,26 @@
  */
 package Preprocessing.tokenisasi;
 
-import Preprocessing.Delimiter.delimiter;
+import Preprocessing.Delimiter.Delimiter;
 import tokenisasi.*;
 import java.lang.Object;
 import java.util.StringTokenizer;
 
 /**
  * kelas ini hanya untuk melakukan tokenisasi, bukan untuk melakukan
- * penghilangan angka dan tandabaca. kelas ini akan memanggil delimiter dari
- * kelas/package lain.
+ * penghilangan angka dan tandabaca. kelas ini akan memanggil Delimiter dari
+ kelas/package lain.
  *
  * @author Kotak Hitam
  */
-public class tokenizer {
+public class Tokenisasi {
 
     /**
      * CharSequence is an interface String class implement CharSequence
      */
-//    String delimiter = "[ .,?!0123456789\\+\\-*\\^\\@#$%]+";
+//    String Delimiter = "[ .,?!0123456789\\+\\-*\\^\\@#$%]+";
 //    CharSequence delimit = "[.,?!0123456789\\+\\-*\\^\\@#$%]+";
-    delimiter de = new delimiter();
+    Delimiter de = new Delimiter();
     String kalimat;
     String[] hasilToken = new String[100];//Asumsi 1 paragraf ada 100 kata
     String hasilDelimiter = null;
@@ -36,7 +36,7 @@ public class tokenizer {
      *
      * @param kalimat String; nilai yang digunakan untuk ditokenisasi
      */
-    public tokenizer(String kalimat) {
+    public Tokenisasi(String kalimat) {
         this.kalimat = kalimat;
         de.setScan(this.kalimat);//tambahan baru
     }
@@ -44,7 +44,7 @@ public class tokenizer {
     /**
      * Constructor kosong
      */
-    public tokenizer() {
+    public Tokenisasi() {
 
     }
 
@@ -56,18 +56,18 @@ public class tokenizer {
     public void setKalimat(String kalimat) {
         this.kalimat = kalimat;
         de.setScan(this.kalimat);//tambahan baru
-        System.out.println("tst :" + kalimat);
+//        System.out.println("tst :" + kalimat);
     }
 
     /**
      * Method untuk mendapatkan token dari variabale String kalimat.
      */
     private void getToken() {
-//        hasilToken = kalimat.split(delimiter); // untuk sementara memakai scanner
+//        hasilToken = kalimat.split(Delimiter); // untuk sementara memakai scanner
     }
 
     /**
-     * Method untuk mendapatkan kata yang telah di pisahkan dengan delimiter
+     * Method untuk mendapatkan kata yang telah di pisahkan dengan Delimiter
      */
     private void getDelimeteredText() {
         this.hasilDelimiter = de.GetDelimiteredText();
@@ -89,7 +89,7 @@ public class tokenizer {
     /**
      * Method untuk mendapatkan token dengan menggunakan StringTokenizer
      */
-    private void getToken2() {
+    private void getTokenDelimetered() {
         getDelimeteredText();
         System.out.println("tes: " + hasilDelimiter);
         StringTokenizer st = new StringTokenizer(hasilDelimiter);
@@ -104,8 +104,33 @@ public class tokenizer {
     /**
      * Method untuk mencetak token yang didapat dari getToken2
      */
-    void cetakToken2() {
-        getToken2();
+    void cetakTokenDelimetered() {
+        getTokenDelimetered();
+        for (int i = 0; i < kalimat.length(); i++) {
+            if (hasilToken[i] != null) {
+                System.out.println(hasilToken[i]);
+            }
+        }
+    }
+    
+     public String[] getTokenNonDelimetered() {
+        getDelimeteredText();
+//        System.out.println("tes: " + hasilDelimiter);
+        StringTokenizer st = new StringTokenizer(hasilDelimiter);
+        int i = 0;
+        String[] simpan = new String[1];
+        while (st.hasMoreTokens()) {
+            hasilToken[i++] = st.nextToken();
+
+        }
+        return hasilToken;
+    }
+
+    /**
+     * Method untuk mencetak token yang didapat dari getToken2
+     */
+    void cetakTokenNonDelimetered() {
+        getTokenDelimetered();
         for (int i = 0; i < kalimat.length(); i++) {
             if (hasilToken[i] != null) {
                 System.out.println(hasilToken[i]);

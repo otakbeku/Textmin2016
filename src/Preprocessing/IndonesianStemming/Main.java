@@ -17,6 +17,12 @@ public class Main {
 
         String coba = st.getStemmedText();
         System.out.println("coba : " + coba);
+
+        System.out.println("Input String");
+        String input = "Welcome to java programming programming java";
+        st.setKata(input);
+        String hasil = st.getNonDuplicateText();
+        System.out.println("hasil: "+hasil);
     }
 
 }

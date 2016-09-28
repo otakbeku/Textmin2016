@@ -9,7 +9,7 @@ package tokenisasi;
 import java.lang.Object;
 import java.util.StringTokenizer;
 
-public class tokenizer_nonEditted {
+public class TokenizernonEditted {
 
     /**
      * CharSequence is an interface String class implement CharSequence
@@ -25,14 +25,14 @@ public class tokenizer_nonEditted {
      *
      * @param kalimat String; nilai yang digunakan untuk ditokenisasi
      */
-    public tokenizer_nonEditted(String kalimat) {
+    public TokenizernonEditted(String kalimat) {
         this.kalimat = kalimat;
     }
 
     /**
      * Constructor kosong
      */
-    public tokenizer_nonEditted() {
+    public TokenizernonEditted() {
 
     }
 

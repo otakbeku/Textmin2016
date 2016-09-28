@@ -16,14 +16,14 @@ public class Main {
 
     public static void main(String[] args) {
         String kalimat = "coba tokenisasi!! teks ini. test!234 6877678hhh ++kaka ll-^ @#$nanana %$$batman";
-        tokenizer_nonEditted ubah = new tokenizer_nonEditted();
-        ubah.setKalimat(kalimat);
-        ubah.cetakToken();
+//        TokenizernonEditted ubah = new TokenizernonEditted();
+//        ubah.setKalimat(kalimat);
+//        ubah.cetakToken();
 
         kalimat = "coba tokenisasi!! teks ini. test!234 gjyhkj6877678hhh ++kaka ll-^ @#$nanana %$$batman";
-        tokenizer ubah1 = new tokenizer();
+        Tokenisasi ubah1 = new Tokenisasi();
         ubah1.setKalimat(kalimat);
-        ubah1.cetakToken2();
+        ubah1.cetakTokenDelimetered();
 
     }
 }

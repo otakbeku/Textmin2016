@@ -16,7 +16,11 @@ public class Stemming {
 
     IndonesianStemmer IndStem = null;
 
-    static String kata = null;
+    String kata = null;
+
+    public void setKata(String kata) {
+        this.kata = kata;
+    }
 
     public Stemming() {
         IndStem = new IndonesianStemmer();
@@ -34,6 +38,38 @@ public class Stemming {
         return stem;
     }
 
+    public String getNonDuplicateText() {
+        String hasil = "";
+        if (this.kata != null) {
+            String[] words = this.kata.split("\\s");
+
+            for (int i = 0; i < words.length; i++) {
+                for (int j = 0; j < words.length; j++) {
+                    if (words[i].equals(words[j])) {
+                        if (i != j) {
+                            words[i] = "";
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < words.length; i++) {
+
+                if (words[i] != "") {
+                    hasil += words[i] + " ";
+
+                }
+            }
+        }
+
+        return hasil;
+    }
+
+    /**
+     * Methodnya belum fix bisa
+     *
+     * @param document
+     * @return
+     */
     public String getStemmedDocument(String document) {
 
         kata = document;

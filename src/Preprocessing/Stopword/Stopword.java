@@ -6,7 +6,7 @@
  */
 package Preprocessing.Stopword;
 
-import BacaFile.bacafile;
+import BacaFile.BacaFile;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -18,7 +18,7 @@ public class Stopword {
     static String[] stopwords = null;
 
     File stopwordtext = new File("C:\\Users\\Kotak Hitam\\Documents\\KULIAH\\TEXTMIN\\stopword-1.txt");
-    bacafile bf = new bacafile(stopwordtext);
+    BacaFile bf = new BacaFile(stopwordtext);
 
     public Stopword() {
         stopwords = bf.getText(stopwordtext).split("\n");
@@ -63,6 +63,10 @@ public class Stopword {
             getKata();
         }
         return docFixed;
+    }
+
+    public void setDoc(String doc) {
+        this.doc = doc;
     }
 
 }

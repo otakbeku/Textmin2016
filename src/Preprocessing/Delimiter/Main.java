@@ -12,7 +12,7 @@ package Preprocessing.Delimiter;
  */
 public class Main {
     public static void main(String[] args) {
-        delimiter dee = new delimiter("345AFid546 fgh@#$gh 4567ghj#$%^ ");
+        Delimiter dee = new Delimiter("345AFid546 fgh@#$gh 4567ghj#$%^ ");
         System.out.println("text: "+dee.GetDelimiteredText());
     }
     
