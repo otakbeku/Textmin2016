@@ -13,11 +13,11 @@ Tugas ini di dedikasikan untuk matakuliah Text Mining. Adapun file yang berada d
 ### BUGS (Masih dalam tahap)
 1. 29/09/2016: Masih ada salah pada Stemming. Menggunakan library Lucene. Ada beberapa kata yang tidak terurai menjadi bentuk baku. Serta kosakata stopword yang kurang
 
-2. 29/09/2016: Sisanya masih WIP bersamaan dengan Dokumentasinya. Ada perlu perbaikan terhadap direktorinya
+2. 29/09/2016: Sisanya masih WIP bersamaan dengan dokumentasinya. Ada perlu perbaikan terhadap direktorinya
 
 
 ### Pull Request
-Sebelumnya bisa mengontak dahulu pada: iceramngl[add]gmail[dot]com
+Sebelumnya bisa mengontak dahulu melalui surel: iceramngl[add]gmail[dot]com
 
 
 
