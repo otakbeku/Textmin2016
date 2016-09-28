@@ -6,6 +6,7 @@ Oleh **Harits Abdurrohman**
 Tugas ini di dedikasikan untuk matakuliah Text Mining. Adapun file yang berada didalamnnya adalah:
 
 -preprocessing: Tokenisasi, delimiter, Filtering stopword serta Stemming
+
 -Document Indexing and Term Weighting: Term Frequency, Document Frequency, Inverse  Document Frequency
 
 
