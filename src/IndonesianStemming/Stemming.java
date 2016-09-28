@@ -4,19 +4,12 @@
  * Menerima saran. Feel free to forking and make your own.
  * site: otakbeku.github.io/Textmin2016/
  */
-package textmin2016;
+package IndonesianStemming;
 
 /**
  *
  * @author Kotak Hitam
  */
-public class Textmin2016 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Stemming {
     
 }

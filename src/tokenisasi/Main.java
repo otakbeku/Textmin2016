@@ -1,7 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+ * Setiap baris kode ini berada di bawah tanggung jawab penulis
+ * Jika ada salah segera hubungi penulis. Terima kasih
+ * Menerima saran. Feel free to forking and make your own.
+ * site: otakbeku.github.io/Textmin2016/
  */
 package tokenisasi;
 
