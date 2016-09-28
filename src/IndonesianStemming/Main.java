@@ -11,5 +11,12 @@ package IndonesianStemming;
  * @author Kotak Hitam
  */
 public class Main {
-    
+
+    public static void main(String[] args) {
+        Stemming st = new Stemming("memberikan");
+
+        String coba = st.getStemmedText();
+        System.out.println("coba : " + coba);
+    }
+
 }

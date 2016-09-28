@@ -6,10 +6,38 @@
  */
 package IndonesianStemming;
 
+import org.apache.lucene.analysis.id.IndonesianStemmer;
+
 /**
  *
  * @author Kotak Hitam
  */
 public class Stemming {
-    
+
+    IndonesianStemmer IndStem = null;
+
+    static String kata = null;
+
+    public Stemming() {
+        IndStem = new IndonesianStemmer();
+    }
+
+    public Stemming(String text) {
+        kata = text;
+        IndStem = new IndonesianStemmer();
+    }
+
+    public String getStemmedText() {
+        char[] charKata = kata.toCharArray();
+        int panjangKata = IndStem.stem(charKata, charKata.length, true);
+        String stem = new String(charKata, 0, panjangKata);
+        return stem;
+    }
+
+    public String getStemmedDocument(String document) {
+
+        kata = document;
+        return null;
+    }
+
 }
