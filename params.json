@@ -1,6 +1,6 @@
 {
   "name": "Textmin2016",
   "tagline": "Tugas TEXT MINING Semester Ganjil FILKOM 2016",
-  "body": "\r\nTugas TEXT MINING Semester Ganjil FILKOM 2016\r\n\r\nProject\r\n\r\n",
+  "body": "# Textmin2016\r\n## TUGAS \r\n### TEXT MINING Semester Ganjil FILKOM 2016\r\nOleh **Harits Abdurrohman**\r\n\r\nTugas ini di dedikasikan untuk matakuliah Text Mining. Adapun file yang berada didalamnnya adalah:\r\n\r\n-preprocessing: Tokenisasi, delimiter, Filtering stopword serta Stemming\r\n\r\n-Document Indexing and Term Weighting: Term Frequency, Document Frequency, Inverse  Document Frequency\r\n\r\n\r\n### BUGS (Masih dalam tahap)\r\n1. 29/09/2016: Masih ada salah pada Stemming. Menggunakan library Lucene. Ada beberapa kata yang tidak terurai menjadi bentuk baku. Serta kosakata stopword yang kurang\r\n\r\n2. 29/09/2016: Sisanya masih WIP bersamaan dengan dokumentasinya. Ada perlu perbaikan terhadap direktorinya\r\n\r\n\r\n### Pull Request\r\nSebelumnya bisa mengontak dahulu melalui surel: iceramngl[add]gmail[dot]com\r\n\r\n\r\n\r\n\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
