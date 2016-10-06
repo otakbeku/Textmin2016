@@ -24,10 +24,10 @@ public class Main {
         test.buatFileInOut();
 //        System.out.println("test: " + test.getTulis().toString());
         File Fin = new File(test.getFinDef());
-        test.AddTextToFile(Fin, text);
+        test.AddTextOnNewLine(Fin, text);
         System.out.println(test.getText(Fin));
 //        test.setText(Fin, nis);
-        test.AddTextOnNewLine(Fin, nis);
+        test.AddTextToFile(Fin, nis);
         System.out.println(test.getText(Fin));
 
     }
