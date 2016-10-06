@@ -3,12 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Kotak%20Hitam/Documents/NetBeansProjects/Textmin2016/src/TFIDF/Main.java</file>
-            <file>file:/C:/Users/Kotak%20Hitam/Documents/NetBeansProjects/Textmin2016/src/Stopword/Stopword.java</file>
-            <file>file:/C:/Users/Kotak%20Hitam/Documents/NetBeansProjects/Textmin2016/src/tokenisasi/Main.java</file>
-            <file>file:/C:/Users/Kotak%20Hitam/Documents/NetBeansProjects/Textmin2016/src/IndonesianStemming/Main.java</file>
-            <file>file:/C:/Users/Kotak%20Hitam/Documents/NetBeansProjects/Textmin2016/src/tokenisasi/tokenizer.java</file>
-            <file>file:/C:/Users/Kotak%20Hitam/Documents/NetBeansProjects/Textmin2016/src/IndonesianStemming/Stemming.java</file>
+            <file>file:/C:/Users/Kotak%20Hitam/Documents/NetBeansProjects/Textmin2016/src/TFIDF/Preprocessing/Stopword/Stopword.java</file>
         </group>
     </open-files>
 </project-private>

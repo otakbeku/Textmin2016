@@ -6,6 +6,10 @@
  */
 package TFIDF.Preprocessing.IndonesianStemming;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import org.apache.lucene.analysis.id.IndonesianStemmer;
 
 /**
@@ -15,7 +19,6 @@ import org.apache.lucene.analysis.id.IndonesianStemmer;
 public class Stemming {
 
     IndonesianStemmer IndStem = null;
-
     String kata = null;
 
     public void setKata(String kata) {
@@ -36,6 +39,24 @@ public class Stemming {
         int panjangKata = IndStem.stem(charKata, charKata.length, true);
         String stem = new String(charKata, 0, panjangKata);
         return stem;
+    }
+
+    public String getStemmedText(String kata) {
+        char[] charKata = kata.toCharArray();
+        int panjangKata = IndStem.stem(charKata, charKata.length, true);
+        String stem = new String(charKata, 0, panjangKata);
+        return stem;
+    }
+
+    public ArrayList<String> setStemmedText(ArrayList<String> Arr) {
+        char[] charKata = null;
+        for (int i = 0; i < Arr.size(); i++) {
+            charKata = Arr.get(i).toCharArray();
+            int panjangKata = IndStem.stem(charKata, charKata.length, true);
+            String stem = new String(charKata, 0, panjangKata);
+            Arr.set(i, stem);
+        }
+        return Arr;
     }
 
     public String getNonDuplicateText() {
@@ -61,6 +82,16 @@ public class Stemming {
             }
         }
 
+        return hasil;
+    }
+
+    public ArrayList<String> getNonDuplicateText(ArrayList<String> arr) {
+        List<String> listNoDuplicate = arr;
+        Set<String> SetNoDulicate = new HashSet<>();
+        SetNoDulicate.addAll(listNoDuplicate);
+        listNoDuplicate.clear();
+        listNoDuplicate.addAll(SetNoDulicate);
+        ArrayList<String> hasil = new ArrayList<String>(listNoDuplicate);
         return hasil;
     }
 

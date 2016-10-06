@@ -14,19 +14,25 @@ public class Stopword {
 
     String doc = "";
     String docFixed = "";
-    static ArrayList<String> wordList = new ArrayList<String>();
+    ArrayList<String> wordList = new ArrayList<String>();
     static String[] stopwords = null;
     //Pathnya bisa diganti nanti
-    File stopwordtext = new File("C:\\Users\\Kotak Hitam\\Documents\\NetBeansProjects\\Textmin2016\\src\\Preprocessing\\stopword-1.txt");
-    BacaFile bf = new BacaFile(stopwordtext);
+    File stopwordtext = null;
+    BacaFile bf = null;
 
     public Stopword() {
+        stopwordtext = new File("C:\\Users\\Kotak Hitam\\Documents\\NetBeansProjects\\Textmin2016\\src\\TFIDF\\Preprocessing\\Stopword\\stopword-1.txt");
+        bf = new BacaFile(stopwordtext);
         stopwords = bf.getText(stopwordtext).split("\n");
+
     }
 
     public Stopword(String doc) {
         this.doc = doc;
+        stopwordtext = new File("stopword-1.txt");
+        bf = new BacaFile(stopwordtext);
         stopwords = bf.getText(stopwordtext).split("\n");
+
     }
 
     private void removeStopwords() {
@@ -40,6 +46,18 @@ public class Stopword {
         }
 
         for (int i = 0; i < wordList.size(); i++) {
+            for (int j = 0; j < stopwords.length; j++) {
+                if (wordList.contains(stopwords[j])) {
+                    wordList.remove(stopwords[j]);
+                    wordList.remove("");
+                }
+            }
+        }
+    }
+
+    private void removeStopwords(ArrayList<String> hasilToken) {
+        this.wordList = hasilToken;
+        for (int i = 0; i < hasilToken.size(); i++) {
             for (int j = 0; j < stopwords.length; j++) {
                 if (wordList.contains(stopwords[j])) {
                     wordList.remove(stopwords[j]);
@@ -63,6 +81,11 @@ public class Stopword {
             getKata();
         }
         return docFixed;
+    }
+
+    public ArrayList<String> getRemovedStopword(ArrayList<String> hasilToken) {
+        removeStopwords(hasilToken);
+        return this.wordList;
     }
 
     public void setDoc(String doc) {

@@ -49,7 +49,8 @@ public class Delimiter {
 
     public void setScan(String text) {
         if (scan == null) {
-            this.scan = new Scanner(text);
+            String cf = caseFolding(text);
+            this.scan = new Scanner(cf);
         }
     }
 
@@ -71,6 +72,11 @@ public class Delimiter {
         }
         scan.close();
         return text;
+    }
+
+    private String caseFolding(String text) {
+        String caseFolded = text.toLowerCase();
+        return caseFolded;
     }
 
 }

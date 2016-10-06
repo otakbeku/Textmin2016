@@ -9,12 +9,13 @@ package TFIDF.Preprocessing.tokenisasi;
 import TFIDF.Preprocessing.Delimiter.Delimiter;
 //import tokenisasi.*;
 import java.lang.Object;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 /**
  * kelas ini hanya untuk melakukan tokenisasi, bukan untuk melakukan
  * penghilangan angka dan tandabaca. kelas ini akan memanggil Delimiter dari
- kelas/package lain.
+ * kelas/package lain.
  *
  * @author Kotak Hitam
  */
@@ -28,6 +29,7 @@ public class Tokenisasi {
     Delimiter de = new Delimiter();
     String kalimat;
     String[] hasilToken = new String[100];//Asumsi 1 paragraf ada 100 kata
+    ArrayList<String> arrHasilToken = new ArrayList<String>();
     String hasilDelimiter = null;
 
     /**
@@ -89,7 +91,7 @@ public class Tokenisasi {
     /**
      * Method untuk mendapatkan token dengan menggunakan StringTokenizer
      */
-    private void getTokenDelimetered() {
+    public void getTokenDelimetered() {
         getDelimeteredText();
         System.out.println("tes: " + hasilDelimiter);
         StringTokenizer st = new StringTokenizer(hasilDelimiter);
@@ -102,9 +104,31 @@ public class Tokenisasi {
     }
 
     /**
+     * Method untuk mendapatkan token dengan menggunakan StringTokenizer
+     *
+     * @param dokumen
+     */
+    public void setTokenDelimetered(String dokumen) {
+        de.setScan(dokumen);
+        getDelimeteredText();
+        System.out.println("tes: " + hasilDelimiter);
+        StringTokenizer st = new StringTokenizer(hasilDelimiter);
+        int i = 0;
+        String[] simpan = new String[1];
+        while (st.hasMoreTokens()) {
+//            hasilToken[i++] = st.nextToken(); Uji coba dengan ArrayList
+            this.arrHasilToken.add(st.nextToken());
+        }
+    }
+
+    public ArrayList<String> getHasilToken() {
+        return this.arrHasilToken;
+    }
+
+    /**
      * Method untuk mencetak token yang didapat dari getToken2
      */
-    void cetakTokenDelimetered() {
+    public void cetakTokenDelimetered() {
         getTokenDelimetered();
         for (int i = 0; i < kalimat.length(); i++) {
             if (hasilToken[i] != null) {
@@ -112,8 +136,8 @@ public class Tokenisasi {
             }
         }
     }
-    
-     public String[] getTokenNonDelimetered() {
+
+    public String[] getTokenNonDelimetered() {
         getDelimeteredText();
 //        System.out.println("tes: " + hasilDelimiter);
         StringTokenizer st = new StringTokenizer(hasilDelimiter);
@@ -164,4 +188,15 @@ public class Tokenisasi {
         return count;
     }
 
+    public int countVector(String kata) {
+        int count = 0;
+        for (int i = 0; i < this.hasilToken.length; i++) {
+            if (this.hasilToken[i].equalsIgnoreCase(kata) && this.hasilToken[i] != null) {
+                count++;
+            } else if (!this.arrHasilToken.isEmpty() && this.arrHasilToken.get(i).equalsIgnoreCase(kata)) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
